@@ -21,7 +21,7 @@ body {
     font-family: "Fahkwang", Helvetica, sans-serif;
     background-color: var(--light-bg);
     font-size: 16px;
-    overflow: hidden;
+    overflow-x: hidden;
     color: var(--black);
 }
 .container {
@@ -34,6 +34,14 @@ button {
     background-color: transparent;
     font-family: inherit;
     display: inline-block;
+    cursor: pointer;
+}
+.main-btn {
+    color: var(--white);
+    background-color: var(--button-bg);
+    padding: 15px 25px;
+    text-transform: capitalize;
+    cursor: pointer;
 }
 ul li {
     list-style-type: none;
@@ -45,9 +53,10 @@ ul li a {
 
 /* ---------- HEADER ---------- */
 .logo {
-    background: url(images/Logo.svg) center /contain no-repeat;
+    background: url(images/Logo.svg) 0% 100% /contain no-repeat;
     width: 134px;
     height: 75px;
+    cursor: pointer;
 }
 .header {
     display: flex;
@@ -95,4 +104,47 @@ ul li a {
     .nav-list {
         gap: 20px;
     }
+}
+
+/* ---------- BANNER ---------- */
+.banner {
+    margin: 80px 0 116px;
+    display: flex;
+    position: relative;
+}
+.banner-text {
+    max-width: 589px;
+    padding-top: 234px;
+}
+.suptitle {
+    font-size: 18px;
+    text-transform: capitalize;
+    position: relative;
+    display: inline-block;
+}
+.suptitle::after {
+    content: "";
+    display: block;
+    background-color: var(--details);
+    height: 1px;
+    width: 28px;
+    position: absolute;
+    right: -40px;
+    top: 50%;
+}
+.banner-title {
+    font-size: 60px;
+    margin: 8px 0 15px;
+    text-transform: capitalize;
+}
+.banner-subtitle {
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+.banner-image {
+    position: absolute;
+    right: -130px;
+    /* max-width: 100%;
+    min-height: 100%; */
 }
