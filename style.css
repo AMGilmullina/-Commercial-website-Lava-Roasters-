@@ -21,7 +21,6 @@ body {
     font-family: "Fahkwang", Helvetica, sans-serif;
     background-color: var(--light-bg);
     font-size: 16px;
-    overflow-x: hidden;
     color: var(--black);
 }
 .container {
@@ -49,21 +48,53 @@ ul li {
 ul li a {
     text-decoration: none;
     color: inherit;
+    text-transform: capitalize;
+}
+img {
+    max-width: 100%;
+    min-height: 100%;
 }
 
 /* ---------- HEADER ---------- */
+.wrapper {
+    overflow: hidden;
+    position: relative;
+    background-color: var(--dark-bg);
+}
+.wrapper::before {
+    background: url(images/Bg-right.png) 100% 0% /contain no-repeat;
+    content: "";
+    width: 19%;
+    height: 49%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.wrapper::after {
+    background: url(images/Bg-left.png) 0% 100% /contain no-repeat;
+    content: "";
+    width: 15%;
+    height: 45%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 .logo {
-    background: url(images/Logo.svg) 0% 100% /contain no-repeat;
+    background: url(images/Logo.svg) 0% 100%/contain no-repeat;
     width: 134px;
     height: 75px;
     cursor: pointer;
 }
+header {   
+    margin-top: 13px;
+    font-weight: 600;
+}
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;    
-    margin-top: 13px;
-    font-weight: 600;
+    align-items: center;  
+    gap: 10px;
+ 
 }
 .nav-list {
     display: flex;
@@ -104,17 +135,25 @@ ul li a {
     .nav-list {
         gap: 20px;
     }
+    .wrapper::before {
+        display: none;
+    }
+    .wrapper::after {
+        display: none;
+    }
 }
 
 /* ---------- BANNER ---------- */
 .banner {
-    margin: 80px 0 116px;
-    display: flex;
+    padding: 243px 0 318px;
     position: relative;
+    /* overflow: hidden; */
+}
+.banner-wrapper {
+    display: flex;
 }
 .banner-text {
     max-width: 589px;
-    padding-top: 234px;
 }
 .suptitle {
     font-size: 18px;
@@ -143,8 +182,59 @@ ul li a {
     margin-bottom: 35px;
 }
 .banner-image {
+    background: url(images/Bg-main.png) 0%/contain no-repeat;
+    width: 58%;
+    height: 83%;
     position: absolute;
+    top: 40px;
     right: -130px;
-    /* max-width: 100%;
-    min-height: 100%; */
 }
+
+@media (max-width:768px) {
+    .banner {
+        padding: 130px 0 200px;
+    }
+    .banner-title {
+        font-size: 45px;
+    }
+    .banner-text {
+        max-width: 394px;
+    }
+    .banner-image {
+        width: 62%;
+        height: 70%;
+        top: 0px;
+        right: -54px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
